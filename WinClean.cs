@@ -24,22 +24,23 @@ namespace WinClean {
             Console.Clear();
             if (!IsWindows10()) {
                 ConsoleWrite("ERROR: This Windows version is not supported! WinClean is only designed for Windows 10.", ConsoleColor.Red);
-                Thread.Sleep(200);
                 EnterToContinue();
                 Environment.Exit(1);
             } else {
                 ConsoleWrite("Welcome to WinClean! WinClean is used to clean and setup your new Windows installation.", ConsoleColor.White);
                 ConsoleWrite("---------------------------------------------------------------------------------------", ConsoleColor.White);
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 Console.WriteLine();
 
                 // Windows Activation
                 ConsoleWrite("=== Windows Activation ===", ConsoleColor.White);
+                Thread.Sleep(1000);
                 if (IsGenuineWindows()) {
                     ConsoleWrite("Let's start by activating windows!", ConsoleColor.White);
                     var result = CreateSelection("Do you already have a windows activation key?",
                     new List<SelectionOption>() {
-                        new SelectionOption(1, "", "")
+                        new SelectionOption(1, "Yes, I do!", ""),
+                        new SelectionOption(2, "No, I don't!", "")
                     });
                 } else {
                     ConsoleWrite("INFO: Skipping Windows Activation because Windows is already activated!", ConsoleColor.White);
@@ -67,6 +68,7 @@ namespace WinClean {
         }
 
         private static void EnterToContinue() {
+            Thread.Sleep(200);
             ConsoleWrite("Press Enter to continue...", ConsoleColor.White);
             var key = Console.ReadKey().Key;
             while (key != ConsoleKey.Enter) {
@@ -78,7 +80,7 @@ namespace WinClean {
             Thread.Sleep(1000);
             ConsoleWrite("Q: " + question, ConsoleColor.White);
             foreach (SelectionOption option in options) {
-                string line = option.number + ". | " + option.text;
+                string line = option.number + ". - " + option.text;
                 if (option.description.Length > 0) {
                     line += " - " + option.description;
                 }
