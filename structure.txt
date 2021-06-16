@@ -1,0 +1,24 @@
+﻿-> Check If We Are Actually On Windows 10
+
+Activate Windows:
+	-> Ask User for KeyOptions
+	switch(KeyOptions):
+		case HasKey:
+			If ActivationKey Is Compatible With OSType:
+				-> Get ActivationKey From User
+				-> [CMD] slmgr /ipk ActivationKey
+		case AllowActivation:
+			-> Ask User For OSType
+			-> Get ActivationKey From KeyList For OSType
+			-> [CMD] slmgr /ipk ActivationKey
+		case RefuseActivation:
+			-> Skip Activation Of Windows
+
+Install Updates:
+	
+Set System Settings:
+	
+Install Programs:
+	
+Cleanup and Check:
+	
