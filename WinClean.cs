@@ -32,7 +32,7 @@ namespace WinClean {
 
                 // Windows Activation
                 ConsoleWrite("=== Windows Activation ===", ConsoleColor.White);
-                if (!IsGenuineWindows()) {
+                if (IsGenuineWindows()) {
                     ConsoleWrite("Let's start by activating windows!", ConsoleColor.White);
                     var result = CreateSelection("",
                     new List<SelectionOption>() {
