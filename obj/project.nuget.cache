@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "CH3I24Pbasm9ZigzPgx4I5TGNLjrpiMX9xcSrIJDbGKu9prAXLLcugouhjjjwe5Zfx5dGOgFYLAhf2d8Yafqcw==",
+  "dgSpecHash": "KLEMvimwua1vF5zlbiZn4OXp/B6/FNVs4u9jiQDydmT6gIX+4oNduB15rHEVgyjZGpN7WKAuS0m/C3eVgq5i8Q==",
   "success": true,
   "projectFilePath": "E:\\WinClean\\WinClean.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.16\\microsoft.netcore.app.runtime.win-x64.3.1.16.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.16\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.16.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.16\\microsoft.aspnetcore.app.runtime.win-x64.3.1.16.nupkg.sha512"
+  ],
   "logs": []
 }
