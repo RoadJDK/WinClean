@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -37,6 +38,7 @@ namespace WinClean {
                 Thread.Sleep(1000);
                 if (IsGenuineWindows()) {
                     ConsoleWrite("Let's start by activating windows!", ConsoleColor.White);
+                    Console.WriteLine();
                     var result = CreateSelection("Do you already have a windows activation key?",
                     new List<SelectionOption>() {
                         new SelectionOption(1, "Yes, I do!", ""),
@@ -86,6 +88,8 @@ namespace WinClean {
                 }
                 ConsoleWrite(line, ConsoleColor.White);
             }
+            Console.Write("Select (" + (options.Any() ? options.Min(option => option.number) : 0) + "-" + (options.Any() ? options.Max(option => option.number) : 0) + "): ");
+            Console.ReadLine();
             return new SelectionOption();
         }
 
