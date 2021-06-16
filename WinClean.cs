@@ -72,7 +72,7 @@ namespace WinClean {
         }
 
         private static SelectionOption CreateSelection(string question, List<SelectionOption> options) {
-            ConsoleWrite("- " + question + " -", ConsoleColor.White);
+            ConsoleWrite("Q: " + question, ConsoleColor.White);
             foreach (SelectionOption option in options) {
                 string line = option.number + ". | " + option.text;
                 if (option.description.Length > 0) {
