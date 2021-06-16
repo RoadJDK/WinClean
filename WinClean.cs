@@ -72,6 +72,7 @@ namespace WinClean {
         }
 
         private static SelectionOption CreateSelection(string question, List<SelectionOption> options) {
+            Console.WriteLine();
             ConsoleWrite("Q: " + question, ConsoleColor.White);
             foreach (SelectionOption option in options) {
                 string line = option.number + ". | " + option.text;
@@ -80,6 +81,7 @@ namespace WinClean {
                 }
                 ConsoleWrite(line, ConsoleColor.White);
             }
+            Console.WriteLine();
             return new SelectionOption();
         }
 
