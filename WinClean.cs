@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
@@ -23,11 +24,13 @@ namespace WinClean {
             Console.Clear();
             if (!IsWindows10()) {
                 ConsoleWrite("ERROR: This Windows version is not supported! WinClean is only designed for Windows 10.", ConsoleColor.Red);
+                Thread.Sleep(200);
                 EnterToContinue();
                 Environment.Exit(1);
             } else {
                 ConsoleWrite("Welcome to WinClean! WinClean is used to clean and setup your new Windows installation.", ConsoleColor.White);
                 ConsoleWrite("---------------------------------------------------------------------------------------", ConsoleColor.White);
+                Thread.Sleep(2000);
                 Console.WriteLine();
 
                 // Windows Activation
@@ -72,7 +75,7 @@ namespace WinClean {
         }
 
         private static SelectionOption CreateSelection(string question, List<SelectionOption> options) {
-            Console.WriteLine();
+            Thread.Sleep(1000);
             ConsoleWrite("Q: " + question, ConsoleColor.White);
             foreach (SelectionOption option in options) {
                 string line = option.number + ". | " + option.text;
@@ -81,7 +84,6 @@ namespace WinClean {
                 }
                 ConsoleWrite(line, ConsoleColor.White);
             }
-            Console.WriteLine();
             return new SelectionOption();
         }
 
