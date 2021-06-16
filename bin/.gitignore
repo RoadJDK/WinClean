@@ -1,2 +1,2 @@
 Debug/netcoreapp3.1/win-x64/*
-!Debug/netcoreapp3.1/win-x64/publish/*
+!Debug/netcoreapp3.1/win-x64/publish/
