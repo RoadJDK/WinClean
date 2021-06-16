@@ -20,25 +20,30 @@ namespace WinClean {
     
     public class WinClean {
         static void Main(string[] args) {
+            Console.Clear();
             if (!IsWindows10()) {
                 ConsoleWrite("ERROR: This Windows version is not supported! WinClean is only designed for Windows 10.", ConsoleColor.Red);
                 EnterToContinue();
                 Environment.Exit(1);
             } else {
                 ConsoleWrite("Welcome to WinClean! WinClean is used to clean and setup your new Windows installation.", ConsoleColor.White);
+                ConsoleWrite("---------------------------------------------------------------------------------------", ConsoleColor.White);
+                Console.WriteLine();
 
                 // Windows Activation
-                if (IsGenuineWindows()) {
-                    ConsoleWrite("This is a genuine/activated windows copy!", ConsoleColor.White);
-                } else {
-                    ConsoleWrite("This is NOT a genuine/activated windows copy!", ConsoleColor.White);
-                }
-                CreateSelection("",
+                ConsoleWrite("=== Windows Activation ===", ConsoleColor.White);
+                if (!IsGenuineWindows()) {
+                    ConsoleWrite("Let's start by activating windows!", ConsoleColor.White);
+                    var result = CreateSelection("",
                     new List<SelectionOption>() {
                         new SelectionOption(1, "", "")
                     });
+                } else {
+                    ConsoleWrite("INFO: Skipping Windows Activation because Windows is already activated!", ConsoleColor.White);
+                }
+                
             }
-            Console.ReadLine();
+            EnterToContinue();
         }
 
         public enum SL_GENUINE_STATE {
@@ -66,8 +71,8 @@ namespace WinClean {
             }
         }
 
-        private static void CreateSelection(string question, List<SelectionOption> options) {
-
+        private static SelectionOption CreateSelection(string question, List<SelectionOption> options) {
+            return new SelectionOption();
         }
 
         private static bool IsWindows10() {
