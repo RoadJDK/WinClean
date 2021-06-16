@@ -34,7 +34,7 @@ namespace WinClean {
                 ConsoleWrite("=== Windows Activation ===", ConsoleColor.White);
                 if (IsGenuineWindows()) {
                     ConsoleWrite("Let's start by activating windows!", ConsoleColor.White);
-                    var result = CreateSelection("",
+                    var result = CreateSelection("Do you already have a windows activation key?",
                     new List<SelectionOption>() {
                         new SelectionOption(1, "", "")
                     });
@@ -72,6 +72,14 @@ namespace WinClean {
         }
 
         private static SelectionOption CreateSelection(string question, List<SelectionOption> options) {
+            ConsoleWrite("- " + question + " -", ConsoleColor.White);
+            foreach (SelectionOption option in options) {
+                string line = option.number + ". | " + option.text;
+                if (option.description.Length > 0) {
+                    line += " - " + option.description;
+                }
+                ConsoleWrite(line, ConsoleColor.White);
+            }
             return new SelectionOption();
         }
 
