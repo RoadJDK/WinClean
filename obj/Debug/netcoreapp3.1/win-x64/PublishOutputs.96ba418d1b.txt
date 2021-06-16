@@ -1,0 +1,2 @@
+E:\WinClean\bin\Debug\netcoreapp3.1\win-x64\publish\WinClean.pdb
+E:\WinClean\bin\Debug\netcoreapp3.1\win-x64\publish\WinClean.exe
