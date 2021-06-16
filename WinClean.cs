@@ -89,7 +89,7 @@ namespace WinClean {
                 ConsoleWrite(line, ConsoleColor.White);
             }
             Console.Write("Select (" + (options.Any() ? options.Min(option => option.number) : 0) + "-" + (options.Any() ? options.Max(option => option.number) : 0) + "): ");
-            Console.ReadLine();
+            // TODO: Check selection and return the SelectionOption
             return new SelectionOption();
         }
 
