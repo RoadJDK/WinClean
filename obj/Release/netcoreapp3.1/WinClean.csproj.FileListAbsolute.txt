@@ -1,0 +1,13 @@
+E:\WinClean\bin\Release\netcoreapp3.1\WinClean.exe
+E:\WinClean\bin\Release\netcoreapp3.1\WinClean.deps.json
+E:\WinClean\bin\Release\netcoreapp3.1\WinClean.runtimeconfig.json
+E:\WinClean\bin\Release\netcoreapp3.1\WinClean.runtimeconfig.dev.json
+E:\WinClean\bin\Release\netcoreapp3.1\WinClean.dll
+E:\WinClean\bin\Release\netcoreapp3.1\WinClean.pdb
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.csprojAssemblyReference.cache
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.AssemblyInfoInputs.cache
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.AssemblyInfo.cs
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.csproj.CoreCompileInputs.cache
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.dll
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.pdb
+E:\WinClean\obj\Release\netcoreapp3.1\WinClean.genruntimeconfig.cache
