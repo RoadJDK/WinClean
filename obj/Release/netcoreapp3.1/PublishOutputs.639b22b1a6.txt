@@ -1,5 +1,0 @@
-E:\WinClean\bin\Release\netcoreapp3.1\publish\WinClean.exe
-E:\WinClean\bin\Release\netcoreapp3.1\publish\WinClean.dll
-E:\WinClean\bin\Release\netcoreapp3.1\publish\WinClean.deps.json
-E:\WinClean\bin\Release\netcoreapp3.1\publish\WinClean.runtimeconfig.json
-E:\WinClean\bin\Release\netcoreapp3.1\publish\WinClean.pdb
