@@ -15,7 +15,7 @@ namespace WinClean {
             ConsoleClear();
 
             // === Setting font ===
-
+            ConsoleFont("Consolas", 24);
 
             // === Checking for WinClean registry keys ===
 
