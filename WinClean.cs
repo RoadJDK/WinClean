@@ -14,6 +14,12 @@ namespace WinClean {
         public static string Version = "v0.0.1-alpha1";
 
         public static void Main(string[] args) {
+            // === Setting font ===
+
+
+            // === Checking for WinClean registry keys ===
+
+
             // === Part 0 - Checking for Windows 10 ===
 
 
