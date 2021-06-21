@@ -171,7 +171,7 @@ namespace WinClean {
             public string FontName;
         }
 
-        public static FontInfo[] SetCurrentFont(string font, short fontSize = 0) {
+        public static FontInfo[] ConsoleFont(string font, short fontSize = 0) {
             Console.WriteLine("Set Current Font: " + font);
 
             FontInfo before = new FontInfo {
