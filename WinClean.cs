@@ -12,8 +12,8 @@ namespace WinClean {
         public static string Version = "v0.0.0";
 
         public static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+            ConsoleHelper.ConsoleWrite("Hello World!");
+            ConsoleHelper.EnterToContinue();
         }
     }
 }
