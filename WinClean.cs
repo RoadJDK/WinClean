@@ -4,6 +4,8 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Resources;
+using System.Globalization;
 using Microsoft.Win32;
 
 
@@ -25,8 +27,10 @@ namespace WinClean {
         static void Main(string[] args) {
             Console.Clear();
 
+            ResourceManager resManager = new ResourceManager("Main", typeof(WinClean).Assembly);
+            CultureInfo ci = new CultureInfo("de_DE");
             // Setting the font
-            ConsoleTitle("Setting font...");
+            ConsoleTitle(resManager.GetString("P0_SettingFont", ci));
             if (IsFontInstalled("CascadiaCode Nerd Font")) {
                 ConsoleHelper.SetCurrentFont("CascadiaCode Nerd Font", 24);
             }
