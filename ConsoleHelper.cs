@@ -143,6 +143,10 @@ namespace WinClean {
             return result;
         }
 
+        public static void ConsoleClear() {
+            Console.Clear();
+        }
+
 
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern IntPtr GetStdHandle(int nStdHandle);
