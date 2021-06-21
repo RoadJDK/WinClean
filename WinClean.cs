@@ -6,7 +6,7 @@ namespace WinClean {
     /// <summary>
     /// The main method for the WinClean program.
     /// 
-    /// For Version: v0.0.0
+    /// For Version: v0.0.1
     /// Author: Akjo03
     /// </summary>
     public class WinClean {
