@@ -17,6 +17,9 @@ namespace WinClean {
             // === Setting font ===
 
 
+            // === Setting language ===
+
+
             // === Checking for WinClean registry keys ===
 
 
