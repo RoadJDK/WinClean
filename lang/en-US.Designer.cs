@@ -59,5 +59,14 @@ namespace WinClean.lang {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Setting font... ähnelt.
+        /// </summary>
+        internal static string P0_SettingFont {
+            get {
+                return ResourceManager.GetString("P0_SettingFont", resourceCulture);
+            }
+        }
     }
 }
