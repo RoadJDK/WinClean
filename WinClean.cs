@@ -17,6 +17,9 @@ namespace WinClean {
             // === Setting font ===
             ConsoleFont("Consolas", 24);
 
+            // === Setting language ===
+
+
             // === Checking for WinClean registry keys ===
 
 

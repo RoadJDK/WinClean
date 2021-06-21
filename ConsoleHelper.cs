@@ -1,8 +1,11 @@
-﻿using System;
+﻿using WinClean.resources;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Globalization;
 
 namespace WinClean {
     public class ConsoleHelper {
@@ -54,7 +57,7 @@ namespace WinClean {
         }
 
         public static void ConsoleFatal(int exitCode) {
-            ConsoleFatal(exitCode, "A fatal error has occured!");
+            ConsoleFatal(exitCode, Strings.FatalErrorDefault);
         }
 
         public static void ConsoleFatal(string message) {
@@ -77,6 +80,14 @@ namespace WinClean {
 
         public static void ConsoleTitle(string title) {
             Console.Title = "WinClean " + WinClean.Version + " - " + title;
+        }
+
+        public static void ConsoleLang(string locale) {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(locale);
+        }
+
+        public static void ConsoleSleep(int ms) {
+            Thread.Sleep(ms);
         }
 
         public static string ConsoleRead() {
