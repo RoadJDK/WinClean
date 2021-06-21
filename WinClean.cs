@@ -1,4 +1,5 @@
-﻿using static WinClean.ConsoleHelper;
+﻿using System.Collections.Generic;
+using static WinClean.ConsoleHelper;
 
 namespace WinClean {
     /// <summary>
@@ -18,7 +19,27 @@ namespace WinClean {
             ConsoleFont("Consolas", 24);
 
             // === Setting language ===
+            var lang = CreateQuestion("Language / Sprache:", new List<SelectionOption>() {
+                new SelectionOption(1, "English"),
+                new SelectionOption(2, "Deutsch")
+            });
 
+            switch (lang) {
+                case 1:
+                    ConsoleLang("en-us");
+                    break;
+
+                case 2:
+                    ConsoleLang("de-de");
+                    break;
+
+                default:
+                    ConsoleLang("en-us");
+                    ConsoleWriteError("Something went wrong while choosing the language!");
+                    break;
+            }
+
+            ConsoleClear();
 
             // === Checking for WinClean registry keys ===
 
