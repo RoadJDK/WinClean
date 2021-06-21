@@ -1,3 +1,4 @@
 files:
   - source: /lang/*.resx
-    translation: /lang/locale/%locale_with_underscore%/%original_file_name%
+    translation: >-
+      /lang/locale/%locale_with_underscore%/%file_name%.%locale_with_underscore%.resx
