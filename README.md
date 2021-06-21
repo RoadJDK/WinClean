@@ -5,5 +5,5 @@
 ## What is WinClean?
 WinClean is a command line app which cleans and setups your fresh Windows 10 installation. WinClean will activate and update Windows, clean Windows from any bloatware, set everything up for your needs and install your preferred software.
 
-## Localization [![Crowdin](https://badges.crowdin.net/winclean/localized.svg)](https://crowdin.com)
+## Localization    [![Crowdin](https://badges.crowdin.net/winclean/localized.svg)](https://crowdin.com)
 [Contribute to localizing WinClean](https://crowdin.com/project/winclean)
