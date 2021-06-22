@@ -135,4 +135,7 @@
   <data name="SelectionSelect" xml:space="preserve">
     <value>strings.SelectionSelect</value>
   </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>strings.WelcomeMessage</value>
+  </data>
 </root>

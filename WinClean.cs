@@ -20,6 +20,10 @@ namespace WinClean {
 
             // === Setting font ===
             ConsoleFont("Consolas", 24);
+            ConsoleLang("en-us");
+
+            // === Checking for WinClean registry keys ===
+
 
             // === Setting language ===
             var lang = CreateQuestion("Language / Sprache:", new List<SelectionOption>() {
@@ -37,18 +41,16 @@ namespace WinClean {
                     break;
 
                 default:
-                    ConsoleLang("en-us");
                     ConsoleWriteError(Strings.LangaugeSelectionError);
                     break;
             }
 
             ConsoleClear();
 
-            // === Checking for WinClean registry keys ===
-
-
             // === Welcome to WinClean ===
-
+            ConsoleWrite(Strings.WelcomeMessage);
+            ConsoleSleep(3000);
+            ConsoleClear();
 
             // === Part 0 - Checking for Windows 10 ===
 
