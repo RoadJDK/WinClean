@@ -161,13 +161,16 @@ namespace WinClean {
             Thread.Sleep(ms);
         }
 
-        public static int ConsoleRun(string command, bool hide) {
+        public static int ConsoleRun(string command, bool hide, bool admin) {
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
             cmd.StartInfo.RedirectStandardOutput = !hide;
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
+            if (admin) {
+                cmd.StartInfo.Verb = "runas";
+            }
             cmd.Start();
 
             cmd.StandardInput.WriteLine(command);

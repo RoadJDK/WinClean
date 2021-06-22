@@ -132,7 +132,7 @@ namespace WinClean {
                             ConsoleWriteError(Strings.EnterActivationKeyError);
                             activationKey = ConsoleRead(Strings.ActivationKey);
                         }
-                        var activationSetExitCode = ConsoleRun(@"cscript C:\Windows\System32\slmgr.vbs //B //Nologo //T:60 /ipk " + activationKey.Trim(), true);
+                        var activationSetExitCode = ConsoleRun(@"cscript C:\Windows\System32\slmgr.vbs //T:60 /ipk " + activationKey.Trim(), false, true);
                         if (activationSetExitCode == 0) {
                             ConsoleWrite("Activation Key has been set succesfully!");
                         } else {
