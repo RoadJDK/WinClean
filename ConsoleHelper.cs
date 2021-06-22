@@ -178,7 +178,7 @@ namespace WinClean {
             cmd.StandardInput.Close();
             cmd.WaitForExit();
             if (!hide) {
-                ConsoleWrite("System", cmd.StandardOutput.ReadToEnd());
+                ConsoleWrite("CMD", cmd.StandardOutput.ReadToEnd());
             }
 
             return cmd.ExitCode;
@@ -207,7 +207,7 @@ namespace WinClean {
             }
         }
 
-        public static string ConsoleRunWithChecks(string command, List<string> checks, bool admin) {
+        public static string ConsoleRunWithChecks(string command, List<string> checks, bool hide, bool admin) {
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
             cmd.StartInfo.RedirectStandardInput = true;
@@ -224,6 +224,9 @@ namespace WinClean {
             cmd.StandardInput.Close();
             cmd.WaitForExit();
             string cmdOut = cmd.StandardOutput.ReadToEnd();
+            if (!hide) {
+                ConsoleWrite("CMD", cmdOut);
+            }
             foreach (string check in checks) {
                 if (cmdOut.Contains(check)) {
                     return check;

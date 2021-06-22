@@ -132,7 +132,7 @@ namespace WinClean {
                             activationKey = ConsoleRead(Strings.ActivationKey);
                         }
                         try {
-                            string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //B //Nologo //T:60 /ipk " + activationKey.Trim(), 
+                            string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //T:60 /ipk " + activationKey.Trim(), 
                                 new List<string>() { 
                                     "0x8004FE21", // This computer is not running genuine Windows.
                                     "0x80070005", // Access denied. The requested action requires elevated privileges.
@@ -140,7 +140,7 @@ namespace WinClean {
                                     "0xC004B100", // Computer could not be activated.
                                     "0xC004C001", // Product key is invalid.
                                     "0xC004C003"  // Product key is blocked.
-                                }, true);
+                                }, false, true);
                             switch (activationComplete) {
                                 case null:
                                     ConsoleWrite("Activation Key \"" + activationKey + "\" has succesfully installed!");
