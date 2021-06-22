@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using WinClean.resources;
+
+using System;
+using System.Collections.Generic;
 using static WinClean.ConsoleHelper;
 
 namespace WinClean {
@@ -35,7 +38,7 @@ namespace WinClean {
 
                 default:
                     ConsoleLang("en-us");
-                    ConsoleWriteError("Something went wrong while choosing the language!");
+                    ConsoleWriteError(Strings.LangaugeSelectionError);
                     break;
             }
 

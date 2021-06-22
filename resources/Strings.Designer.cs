@@ -61,11 +61,56 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterToContinue ähnelt.
+        /// </summary>
+        public static string EnterToContinue {
+            get {
+                return ResourceManager.GetString("EnterToContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.FatalErrorDefault ähnelt.
         /// </summary>
         public static string FatalErrorDefault {
             get {
                 return ResourceManager.GetString("FatalErrorDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.LanguageSelectionError ähnelt.
+        /// </summary>
+        public static string LangaugeSelectionError {
+            get {
+                return ResourceManager.GetString("LangaugeSelectionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionNotInRange ähnelt.
+        /// </summary>
+        public static string SelectionNotInRange {
+            get {
+                return ResourceManager.GetString("SelectionNotInRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionNotNumber ähnelt.
+        /// </summary>
+        public static string SelectionNotNumber {
+            get {
+                return ResourceManager.GetString("SelectionNotNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionSelect ähnelt.
+        /// </summary>
+        public static string SelectionSelect {
+            get {
+                return ResourceManager.GetString("SelectionSelect", resourceCulture);
             }
         }
     }

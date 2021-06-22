@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EnterToContinue" xml:space="preserve">
+    <value>strings.EnterToContinue</value>
+  </data>
   <data name="FatalErrorDefault" xml:space="preserve">
     <value>strings.FatalErrorDefault</value>
+  </data>
+  <data name="LangaugeSelectionError" xml:space="preserve">
+    <value>strings.LanguageSelectionError</value>
+  </data>
+  <data name="SelectionNotInRange" xml:space="preserve">
+    <value>strings.SelectionNotInRange</value>
+  </data>
+  <data name="SelectionNotNumber" xml:space="preserve">
+    <value>strings.SelectionNotNumber</value>
+  </data>
+  <data name="SelectionSelect" xml:space="preserve">
+    <value>strings.SelectionSelect</value>
   </data>
 </root>

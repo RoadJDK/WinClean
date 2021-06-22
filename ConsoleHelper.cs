@@ -101,7 +101,7 @@ namespace WinClean {
         }
 
         public static void EnterToContinue() {
-            ConsoleWrite("Press Enter to continue...");
+            ConsoleWrite(Strings.EnterToContinue);
             ConsoleKey key = Console.ReadKey().Key;
             while (key != ConsoleKey.Enter) {
                 key = Console.ReadKey().Key;
@@ -136,16 +136,16 @@ namespace WinClean {
 
             int result = -1;
             while (true) {
-                Console.Write(" Select (" + options.Min(option => option.Number) + "-" + options.Max(option => option.Number) + ") > ");
+                Console.Write(" " + Strings.SelectionSelect + " (" + options.Min(option => option.Number) + "-" + options.Max(option => option.Number) + ") > ");
                 try {
                     result = Convert.ToInt32(ConsoleRead());
                 }
                 catch (FormatException) {
-                    ConsoleWriteError("Selection is not a number!");
+                    ConsoleWriteError(Strings.SelectionNotNumber);
                     continue;
                 }
                 if (!(result >= options.Min(option => option.Number) && result <= options.Max(option => option.Number))) {
-                    ConsoleWriteError("Selection is not in range!");
+                    ConsoleWriteError(Strings.SelectionNotInRange);
                     continue;
                 }
                 break;
