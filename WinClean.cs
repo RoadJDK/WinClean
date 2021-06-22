@@ -16,7 +16,7 @@ namespace WinClean {
     /// </summary>
     public class WinClean {
 
-        public static string Version = "v0.1.0-iss11-t2";
+        public static string Version = "v0.1.0-iss11";
 
         public static void Main(string[] args) {
             ConsoleClear();
@@ -131,8 +131,13 @@ namespace WinClean {
                             ConsoleWriteError(Strings.EnterActivationKeyError);
                             activationKey = ConsoleRead(Strings.ActivationKey);
                         }
+                        if (activationKeyTries >= 3) {
+                            ConsoleWriteError(Strings.EnterActivationKeyError_TooManyTries);
+                            EnterToContinue();
+                            return;
+                        }
                         try {
-                            string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //B //Nologo //T:60 /ipk " + activationKey.Trim(),
+                            string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //T:60 /ipk " + activationKey.Trim(),
                             new List<string>() {
                                 "0x8004FE21", // This computer is not running genuine Windows.
                                 "0x80070005", // Access denied. The requested action requires elevated privileges.
@@ -147,7 +152,7 @@ namespace WinClean {
                             switch (activationComplete.ToUpper()) {
                                 case null:
                                     ConsoleWrite("Activation Key has been succesfully installed!");
-                                    break;
+                                    return;
 
                                 case "0x8004FE21":
                                     ConsoleWriteError(Strings.ActivationKeyInstallError_NotGenuineWindows);
@@ -204,7 +209,7 @@ namespace WinClean {
                                     return;
                             }
                         } finally {
-                            ConsoleWriteError("Something went wrong...");
+                            ConsoleWriteError(Strings.SomethingWentWrong);
                             EnterToContinue(Strings.EnterToExit);
                             ConsoleExit(-1);
                         }

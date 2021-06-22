@@ -161,6 +161,9 @@
     <value>strings.EnterActivationKeyError</value>
     <comment>Input is not a valid windows activation key! Please try again...</comment>
   </data>
+  <data name="EnterActivationKeyError.TooManyTries" xml:space="preserve">
+    <value>strings.EnterActivationKeyError.TooManyTries</value>
+  </data>
   <data name="EnterToContinue" xml:space="preserve">
     <value>strings.EnterToContinue</value>
     <comment>Press Enter to continue...</comment>
@@ -220,6 +223,10 @@
   <data name="SelectionSelect" xml:space="preserve">
     <value>strings.SelectionSelect</value>
     <comment>Select</comment>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>strings.SomethingWentWrong</value>
+    <comment>Something went wrong...</comment>
   </data>
   <data name="TitleWelcome" xml:space="preserve">
     <value>strings.TitleWelcome</value>

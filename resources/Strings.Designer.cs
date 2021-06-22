@@ -160,6 +160,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterActivationKeyError.TooManyTries ähnelt.
+        /// </summary>
+        public static string EnterActivationKeyError_TooManyTries {
+            get {
+                return ResourceManager.GetString("EnterActivationKeyError.TooManyTries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterToContinue ähnelt.
         /// </summary>
         public static string EnterToContinue {
@@ -291,6 +300,15 @@ namespace WinClean.resources {
         public static string SelectionSelect {
             get {
                 return ResourceManager.GetString("SelectionSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SomethingWentWrong ähnelt.
+        /// </summary>
+        public static string SomethingWentWrong {
+            get {
+                return ResourceManager.GetString("SomethingWentWrong", resourceCulture);
             }
         }
         
