@@ -50,6 +50,7 @@ namespace WinClean {
             // === Welcome to WinClean ===
             ConsoleWrite(Strings.WelcomeMessage);
             ConsoleSleep(3000);
+            ConsoleClear();
 
             // === Part 0 - Checking for Windows 10 ===
 
