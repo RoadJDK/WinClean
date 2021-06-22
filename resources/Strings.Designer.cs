@@ -70,6 +70,78 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.AccessDenied ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_AccessDenied {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.AccessDenied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.ComputerActivationFailed ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_ComputerActivationFailed {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.ComputerActivationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.NotActivatingWindows ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_NotActivatingWindows {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.NotActivatingWindows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.NotGenuineWindows ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_NotGenuineWindows {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.NotGenuineWindows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.Other ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_Other {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.ProductKeyBlocked ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_ProductKeyBlocked {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.ProductKeyBlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.ProductKeyInvalid ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_ProductKeyInvalid {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.ProductKeyInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKeyInstallError.ProductKeyNotWorking ähnelt.
+        /// </summary>
+        public static string ActivationKeyInstallError_ProductKeyNotWorking {
+            get {
+                return ResourceManager.GetString("ActivationKeyInstallError.ProductKeyNotWorking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterActivationKey ähnelt.
         /// </summary>
         public static string EnterActivationKey {

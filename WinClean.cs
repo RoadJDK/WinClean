@@ -131,29 +131,76 @@ namespace WinClean {
                             ConsoleWriteError(Strings.EnterActivationKeyError);
                             activationKey = ConsoleRead(Strings.ActivationKey);
                         }
-                        try {
-                            string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //T:60 /ipk " + activationKey.Trim(), 
-                                new List<string>() { 
-                                    "0x8004FE21", // This computer is not running genuine Windows.
-                                    "0x80070005", // Access denied. The requested action requires elevated privileges.
-                                    "0x8007007b", // The product key you entered didn't work. Try again.
-                                    "0xC004B100", // Computer could not be activated.
-                                    "0xC004C001", // Product key is invalid.
-                                    "0xC004C003", // Product key is blocked.
-                                    "0xC004F050", // Product key is invalid.
-                                    "0xC004F051", // Product key is blocked.
-                                }, false, true);
-                            switch (activationComplete) {
-                                case null:
-                                    ConsoleWrite("Activation Key \"" + activationKey + "\" has succesfully installed!");
-                                    break;
+                        string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //B //Nologo //T:60 /ipk " + activationKey.Trim(), 
+                            new List<string>() { 
+                                "0x8004FE21", // This computer is not running genuine Windows.
+                                "0x80070005", // Access denied. The requested action requires elevated privileges.
+                                "0x8007007b", // The product key you entered didn't work. Try again.
+                                "0xC004B100", // Computer could not be activated.
+                                "0xC004C001", // Product key is invalid.
+                                "0xC004C003", // Product key is blocked.
+                                "0xC004F050", // Product key is invalid.
+                                "0xC004F051", // Product key is blocked.
+                            }, true, true);
 
-                                default:
-                                    ConsoleWriteError("Activation Key \"" + activationKey + "\" has not been installed! Reason: " + activationComplete);
-                                    break;
-                            }
-                        } finally {
-                            EnterToContinue(Strings.EnterToExit);
+                        switch (activationComplete.ToUpper()) {
+                            case null:
+                                ConsoleWrite("Activation Key has been succesfully installed!");
+                                break;
+
+                            case "0x8004FE21":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_NotGenuineWindows);
+                                ConsoleWriteWarn(Strings.ActivationKeyInstallError_NotActivatingWindows);
+                                EnterToContinue();
+                                return;
+
+                            case "0x80070005":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_AccessDenied);
+                                ConsoleWriteWarn(Strings.ActivationKeyInstallError_NotActivatingWindows);
+                                EnterToContinue();
+                                return;
+
+                            case "0x8007007B":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_ProductKeyNotWorking);
+                                EnterToContinue();
+                                Part1();
+                                break;
+
+                            case "0xC004B100":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_ComputerActivationFailed);
+                                ConsoleWriteWarn(Strings.ActivationKeyInstallError_NotActivatingWindows);
+                                EnterToContinue();
+                                return;
+
+                            case "0xC004C001":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_ProductKeyInvalid);
+                                EnterToContinue();
+                                Part1();
+                                break;
+
+                            case "0xC004C003":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_ProductKeyBlocked);
+                                EnterToContinue();
+                                Part1();
+                                break;
+
+                            case "0xC004F050":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_ProductKeyInvalid);
+                                EnterToContinue();
+                                Part1();
+                                break;
+
+                            case "0xC004F051":
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_ProductKeyBlocked);
+                                EnterToContinue();
+                                Part1();
+                                break;
+
+                            default:
+                                ConsoleWriteError(Strings.ActivationKeyInstallError_Other);
+                                ConsoleWriteWarn(Strings.ActivationKeyInstallError_NotActivatingWindows);
+                                EnterToContinue();
+                                return;
                         }
                         break;
 
@@ -165,8 +212,7 @@ namespace WinClean {
                         ConsoleWriteError(Strings.HasActivationKeySelectionError);
                         return;
                 }
-            }
-            else {
+            } else {
                 ConsoleWrite(Strings.WindowsAlreadyActivated);
                 ConsoleSleep(1000);
                 return;

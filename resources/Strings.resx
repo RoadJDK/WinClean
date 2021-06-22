@@ -121,6 +121,38 @@
     <value>strings.ActivationKey</value>
     <comment>Activation Key</comment>
   </data>
+  <data name="ActivationKeyInstallError.AccessDenied" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.AccessDenied</value>
+    <comment>The activation key was not installed because this environment doesn't have elevated privileges. Please run WinClean as an administrator!</comment>
+  </data>
+  <data name="ActivationKeyInstallError.ComputerActivationFailed" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.ComputerActivationFailed</value>
+    <comment>The activation key was not installed because the activation service determined that the computer cannot be activated. See https://docs.microsoft.com/en-us/windows-server/get-started/activation-error-codes#possible-cause-10 for more details.</comment>
+  </data>
+  <data name="ActivationKeyInstallError.NotActivatingWindows" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.NotActivatingWindows</value>
+    <comment>WinClean will not activate windows.</comment>
+  </data>
+  <data name="ActivationKeyInstallError.NotGenuineWindows" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.NotGenuineWindows</value>
+    <comment>The activation key was not installed because this is not a genuine windows installation. This could have multiple reasons. See https://docs.microsoft.com/en-us/windows-server/get-started/activation-error-codes#possible-cause for more details.</comment>
+  </data>
+  <data name="ActivationKeyInstallError.Other" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.Other</value>
+    <comment>An error occurred, while trying to install the activation key. This could have multiple reasons. https://docs.microsoft.com/en-us/windows-server/get-started/activation-error-codes#summary-of-error-codes for more details.</comment>
+  </data>
+  <data name="ActivationKeyInstallError.ProductKeyBlocked" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.ProductKeyBlocked</value>
+    <comment>The activation key was not installed beacuse it is blocked. This activation key could already be in use or was blocked by Microsoft. Please try again and use a different activation key.</comment>
+  </data>
+  <data name="ActivationKeyInstallError.ProductKeyInvalid" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.ProductKeyInvalid</value>
+    <comment>The activation key was not installed because it is invalid. Please try again or enter a different activation key.</comment>
+  </data>
+  <data name="ActivationKeyInstallError.ProductKeyNotWorking" xml:space="preserve">
+    <value>strings.ActivationKeyInstallError.ProductKeyNotWorking</value>
+    <comment>The activation key was not installed because it didn't work. Please try again or enter a different activation key.</comment>
+  </data>
   <data name="EnterActivationKey" xml:space="preserve">
     <value>strings.EnterActivationKey</value>
     <comment>Please enter your activation key below:</comment>
