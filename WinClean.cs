@@ -139,7 +139,9 @@ namespace WinClean {
                                     "0x8007007b", // The product key you entered didn't work. Try again.
                                     "0xC004B100", // Computer could not be activated.
                                     "0xC004C001", // Product key is invalid.
-                                    "0xC004C003"  // Product key is blocked.
+                                    "0xC004C003", // Product key is blocked.
+                                    "0xC004F050", // Product key is invalid.
+                                    "0xC004F051", // Product key is blocked.
                                 }, false, true);
                             switch (activationComplete) {
                                 case null:
