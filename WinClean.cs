@@ -11,12 +11,12 @@ namespace WinClean {
     /// <summary>
     /// The main method for the WinClean program.
     /// 
-    /// For Version: v0.0.1
+    /// For Version: v0.1.0
     /// Author: Akjo03
     /// </summary>
     public class WinClean {
 
-        public static string Version = "v0.0.1-alpha2";
+        public static string Version = "v0.1.0-pre1";
 
         public static void Main(string[] args) {
             ConsoleClear();
