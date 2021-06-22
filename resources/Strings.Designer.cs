@@ -70,6 +70,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterToExit ähnelt.
+        /// </summary>
+        public static string EnterToExit {
+            get {
+                return ResourceManager.GetString("EnterToExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.FatalErrorDefault ähnelt.
         /// </summary>
         public static string FatalErrorDefault {
@@ -84,6 +93,24 @@ namespace WinClean.resources {
         public static string LangaugeSelectionError {
             get {
                 return ResourceManager.GetString("LangaugeSelectionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.OsNotWindows ähnelt.
+        /// </summary>
+        public static string OsNotWindows {
+            get {
+                return ResourceManager.GetString("OsNotWindows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.OsNotWindows10 ähnelt.
+        /// </summary>
+        public static string OsNotWindows10 {
+            get {
+                return ResourceManager.GetString("OsNotWindows10", resourceCulture);
             }
         }
         

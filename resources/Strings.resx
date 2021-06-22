@@ -120,11 +120,20 @@
   <data name="EnterToContinue" xml:space="preserve">
     <value>strings.EnterToContinue</value>
   </data>
+  <data name="EnterToExit" xml:space="preserve">
+    <value>strings.EnterToExit</value>
+  </data>
   <data name="FatalErrorDefault" xml:space="preserve">
     <value>strings.FatalErrorDefault</value>
   </data>
   <data name="LangaugeSelectionError" xml:space="preserve">
     <value>strings.LanguageSelectionError</value>
+  </data>
+  <data name="OsNotWindows" xml:space="preserve">
+    <value>strings.OsNotWindows</value>
+  </data>
+  <data name="OsNotWindows10" xml:space="preserve">
+    <value>strings.OsNotWindows10</value>
   </data>
   <data name="SelectionNotInRange" xml:space="preserve">
     <value>strings.SelectionNotInRange</value>
