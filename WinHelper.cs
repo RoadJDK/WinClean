@@ -63,5 +63,16 @@ namespace WinClean {
                 }
             }
         }
+
+        public static bool RegistryValueExists(string name) {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\WinClean", RegistryKeyPermissionCheck.ReadWriteSubTree)) {
+                if (key != null) {
+                    if (key.GetValue(name) != null) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
     }
 }

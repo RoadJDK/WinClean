@@ -26,23 +26,6 @@ namespace WinClean {
             ConsoleFont("Consolas", 24);
             ConsoleLang("en-us");
 
-            // === Part 0 - Checking for Windows 10 ===
-            ConsoleTitle("Checking for Windows 10");
-            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
-                ConsoleWriteError(Strings.OsNotWindows);
-                EnterToContinue(Strings.EnterToExit);
-                ConsoleExit(-1);
-            } else {
-                if (!IsWindows10()) {
-                    ConsoleWriteError(Strings.OsNotWindows10);
-                    EnterToContinue(Strings.EnterToExit);
-                    ConsoleExit(-1);
-                }
-            }
-
-            // === Checking for WinClean registry keys ===
-            ConsoleTitle("Registry Check");
-
             // === Setting language ===
             ConsoleTitle("Language");
             var lang = CreateQuestion("Language / Sprache:", new List<SelectionOption>() {
@@ -65,6 +48,25 @@ namespace WinClean {
             }
 
             ConsoleClear();
+
+            // === Part 0 - Checking for Windows 10 ===
+            ConsoleTitle("Checking for Windows 10");
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+                ConsoleWriteError(Strings.OsNotWindows);
+                EnterToContinue(Strings.EnterToExit);
+                ConsoleExit(-1);
+            } else {
+                if (!IsWindows10()) {
+                    ConsoleWriteError(Strings.OsNotWindows10);
+                    EnterToContinue(Strings.EnterToExit);
+                    ConsoleExit(-1);
+                }
+            }
+
+            // === Read language into registry ===
+
+            // === Checking for WinClean registry keys ===
+            ConsoleTitle("Registry Check");
 
             // === Welcome to WinClean ===
             ConsoleTitle(Strings.TitleWelcome);
