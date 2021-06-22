@@ -115,7 +115,6 @@ namespace WinClean {
             ConsoleClear();
             ConsoleWrite(Strings.Part1TitleBar);
 
-            ConsoleWrite(Strings.CheckingWindowsActivation);
             if (!IsWindowsActivated()) {
                 ConsoleWrite(Strings.WindowsNotYetActivated);
                 ConsoleSleep(1000);

@@ -70,15 +70,6 @@ namespace WinClean.resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die strings.CheckingWindowsActivation ähnelt.
-        /// </summary>
-        public static string CheckingWindowsActivation {
-            get {
-                return ResourceManager.GetString("CheckingWindowsActivation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterActivationKey ähnelt.
         /// </summary>
         public static string EnterActivationKey {

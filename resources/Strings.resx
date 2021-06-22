@@ -121,10 +121,6 @@
     <value>strings.ActivationKey</value>
     <comment>Activation Key</comment>
   </data>
-  <data name="CheckingWindowsActivation" xml:space="preserve">
-    <value>strings.CheckingWindowsActivation</value>
-    <comment>Checking your windows activation status. Please wait...</comment>
-  </data>
   <data name="EnterActivationKey" xml:space="preserve">
     <value>strings.EnterActivationKey</value>
     <comment>Please enter your activation key below:</comment>
