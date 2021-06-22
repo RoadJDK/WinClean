@@ -135,4 +135,7 @@
   <data name="SelectionSelect" xml:space="preserve">
     <value>Select</value>
   </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome to WinClean! WinClean is going to clean and set up your new Windows installation.</value>
+  </data>
 </root>
