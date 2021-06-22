@@ -115,6 +115,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.TitleWelcome ähnelt.
+        /// </summary>
+        public static string TitleWelcome {
+            get {
+                return ResourceManager.GetString("TitleWelcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.WelcomeMessage ähnelt.
         /// </summary>
         public static string WelcomeMessage {

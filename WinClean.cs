@@ -50,7 +50,7 @@ namespace WinClean {
             ConsoleClear();
 
             // === Welcome to WinClean ===
-            ConsoleTitle("Welcome");
+            ConsoleTitle(Strings.TitleWelcome);
             ConsoleWrite(Strings.WelcomeMessage);
             ConsoleSleep(4000);
             
