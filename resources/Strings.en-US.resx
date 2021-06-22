@@ -129,6 +129,9 @@
   <data name="LangaugeSelectionError" xml:space="preserve">
     <value>Something went wrong... English is set as language.</value>
   </data>
+  <data name="LanguageAlreadySet" xml:space="preserve">
+    <value>Language has already been set to English.</value>
+  </data>
   <data name="OsNotWindows" xml:space="preserve">
     <value>WinClean can only be used on Windows!</value>
   </data>
