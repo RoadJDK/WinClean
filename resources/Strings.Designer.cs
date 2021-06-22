@@ -113,5 +113,14 @@ namespace WinClean.resources {
                 return ResourceManager.GetString("SelectionSelect", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.WelcomeMessage ähnelt.
+        /// </summary>
+        public static string WelcomeMessage {
+            get {
+                return ResourceManager.GetString("WelcomeMessage", resourceCulture);
+            }
+        }
     }
 }
