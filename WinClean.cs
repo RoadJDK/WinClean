@@ -19,13 +19,15 @@ namespace WinClean {
             ConsoleClear();
 
             // === Setting font ===
+            ConsoleTitle("Setting font...");
             ConsoleFont("Consolas", 24);
             ConsoleLang("en-us");
 
             // === Checking for WinClean registry keys ===
-
+            ConsoleTitle("Registry Check");
 
             // === Setting language ===
+            ConsoleTitle("Language");
             var lang = CreateQuestion("Language / Sprache:", new List<SelectionOption>() {
                 new SelectionOption(1, "English"),
                 new SelectionOption(2, "Deutsch")
@@ -48,6 +50,7 @@ namespace WinClean {
             ConsoleClear();
 
             // === Welcome to WinClean ===
+            ConsoleTitle("Welcome");
             ConsoleWrite(Strings.WelcomeMessage);
             ConsoleSleep(3000);
             ConsoleClear();
