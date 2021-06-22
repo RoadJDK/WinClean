@@ -61,11 +61,38 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ActivationKey ähnelt.
+        /// </summary>
+        public static string ActivationKey {
+            get {
+                return ResourceManager.GetString("ActivationKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.CheckingWindowsActivation ähnelt.
         /// </summary>
         public static string CheckingWindowsActivation {
             get {
                 return ResourceManager.GetString("CheckingWindowsActivation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterActivationKey ähnelt.
+        /// </summary>
+        public static string EnterActivationKey {
+            get {
+                return ResourceManager.GetString("EnterActivationKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterActivationKeyError ähnelt.
+        /// </summary>
+        public static string EnterActivationKeyError {
+            get {
+                return ResourceManager.GetString("EnterActivationKeyError", resourceCulture);
             }
         }
         
@@ -93,6 +120,42 @@ namespace WinClean.resources {
         public static string FatalErrorDefault {
             get {
                 return ResourceManager.GetString("FatalErrorDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.HasActivationKeySelection ähnelt.
+        /// </summary>
+        public static string HasActivationKeySelection {
+            get {
+                return ResourceManager.GetString("HasActivationKeySelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.HasActivationKeySelectionAnswerN ähnelt.
+        /// </summary>
+        public static string HasActivationKeySelectionAnswerN {
+            get {
+                return ResourceManager.GetString("HasActivationKeySelectionAnswerN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.HasActivationKeySelectionAnswerY ähnelt.
+        /// </summary>
+        public static string HasActivationKeySelectionAnswerY {
+            get {
+                return ResourceManager.GetString("HasActivationKeySelectionAnswerY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.HasActivationKeySelectionError ähnelt.
+        /// </summary>
+        public static string HasActivationKeySelectionError {
+            get {
+                return ResourceManager.GetString("HasActivationKeySelectionError", resourceCulture);
             }
         }
         
@@ -129,6 +192,15 @@ namespace WinClean.resources {
         public static string OsNotWindows10 {
             get {
                 return ResourceManager.GetString("OsNotWindows10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1TitleBar ähnelt.
+        /// </summary>
+        public static string Part1TitleBar {
+            get {
+                return ResourceManager.GetString("Part1TitleBar", resourceCulture);
             }
         }
         
@@ -183,6 +255,15 @@ namespace WinClean.resources {
         public static string WindowsAlreadyActivated {
             get {
                 return ResourceManager.GetString("WindowsAlreadyActivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.WindowsNotAlreadyActivated ähnelt.
+        /// </summary>
+        public static string WindowsNotYetActivated {
+            get {
+                return ResourceManager.GetString("WindowsNotYetActivated", resourceCulture);
             }
         }
     }

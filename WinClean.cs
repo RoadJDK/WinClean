@@ -1,6 +1,6 @@
 ﻿using WinClean.resources;
 
-using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
@@ -81,13 +81,7 @@ namespace WinClean {
             ConsoleWrite("", "");
 
             // === Part 1 - Activating Windows ===
-            ConsoleWrite(Strings.CheckingWindowsActivation);
-            if (!IsWindowsActivated()) {
-
-            } else {
-                ConsoleWrite(Strings.WindowsAlreadyActivated);
-                ConsoleSleep(1000);
-            }
+            Part1();
 
             // === Part 2 - Updating Windows ===
 
@@ -115,6 +109,51 @@ namespace WinClean {
 
             // === Part 10 - Finishing WinClean ===
             EnterToContinue(Strings.EnterToExit);
+        }
+
+        private static void Part1() {
+            ConsoleClear();
+            ConsoleWrite(Strings.Part1TitleBar);
+
+            ConsoleWrite(Strings.CheckingWindowsActivation);
+            if (!IsWindowsActivated()) {
+                ConsoleWrite(Strings.WindowsNotYetActivated);
+                ConsoleSleep(1000);
+                var hasActivationKey = CreateQuestion(Strings.HasActivationKeySelection, new List<SelectionOption>() {
+                    new SelectionOption(1, Strings.HasActivationKeySelectionAnswerY),
+                    new SelectionOption(2, Strings.HasActivationKeySelectionAnswerN)
+                });
+
+                switch (hasActivationKey) {
+                    case 1:
+                        ConsoleWrite(Strings.EnterActivationKey);
+                        var activationKey = ConsoleRead(Strings.ActivationKey);
+                        var activationKeyTries = 0;
+                        while (!Regex.IsMatch(activationKey, "^([A-Z0-9]{5}-){4}[A-Z0-9]{5}$") && ++activationKeyTries < 3) {
+                            ConsoleWriteError(Strings.EnterActivationKeyError);
+                            activationKey = ConsoleRead(Strings.ActivationKey);
+                        }
+                        var activationSetExitCode = ConsoleRun(@"cscript C:\Windows\System32\slmgr.vbs //B //Nologo //T:60 /ipk " + activationKey.Trim(), true);
+                        if (activationSetExitCode == 0) {
+                            ConsoleWrite("Activation Key has been set succesfully!");
+                        } else {
+                            ConsoleWrite("Error while setting activation key!");
+                        }
+                        break;
+
+                    case 2:
+                        break;
+
+                    default:
+                        ConsoleWriteError(Strings.HasActivationKeySelectionError);
+                        return;
+                }
+            }
+            else {
+                ConsoleWrite(Strings.WindowsAlreadyActivated);
+                ConsoleSleep(1000);
+                return;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace WinClean {
     public class ConsoleHelper {
@@ -160,6 +161,26 @@ namespace WinClean {
             Thread.Sleep(ms);
         }
 
+        public static int ConsoleRun(string command, bool hide) {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = !hide;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(command);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            if (!hide) {
+                ConsoleWrite("System", cmd.StandardOutput.ReadToEnd());
+            }
+
+            return cmd.ExitCode;
+        }
+
         /// <summary>
         /// Reads the next line from the Console
         /// </summary>
@@ -174,7 +195,7 @@ namespace WinClean {
         /// <param name="text"></param>
         /// <returns></returns>
         public static string ConsoleRead(string text) {
-            Console.Write(" " + text + ": "); return ConsoleRead();
+            Console.Write(" " + text + " > "); return ConsoleRead();
         }
 
         /// <summary>

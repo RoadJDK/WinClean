@@ -117,9 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActivationKey" xml:space="preserve">
+    <value>strings.ActivationKey</value>
+    <comment>Activation Key</comment>
+  </data>
   <data name="CheckingWindowsActivation" xml:space="preserve">
     <value>strings.CheckingWindowsActivation</value>
-    <comment>Checking your windows activation status...</comment>
+    <comment>Checking your windows activation status. Please wait...</comment>
+  </data>
+  <data name="EnterActivationKey" xml:space="preserve">
+    <value>strings.EnterActivationKey</value>
+    <comment>Please enter your activation key below:</comment>
+  </data>
+  <data name="EnterActivationKeyError" xml:space="preserve">
+    <value>strings.EnterActivationKeyError</value>
+    <comment>Input is not a valid windows activation key! Please try again...</comment>
   </data>
   <data name="EnterToContinue" xml:space="preserve">
     <value>strings.EnterToContinue</value>
@@ -132,6 +144,22 @@
   <data name="FatalErrorDefault" xml:space="preserve">
     <value>strings.FatalErrorDefault</value>
     <comment>A fatal error occurred!</comment>
+  </data>
+  <data name="HasActivationKeySelection" xml:space="preserve">
+    <value>strings.HasActivationKeySelection</value>
+    <comment>Do you already have a windows activation key?</comment>
+  </data>
+  <data name="HasActivationKeySelectionAnswerN" xml:space="preserve">
+    <value>strings.HasActivationKeySelectionAnswerN</value>
+    <comment>No, I don't have a windows activation key!</comment>
+  </data>
+  <data name="HasActivationKeySelectionAnswerY" xml:space="preserve">
+    <value>strings.HasActivationKeySelectionAnswerY</value>
+    <comment>Yes, I do have a windows activation key!</comment>
+  </data>
+  <data name="HasActivationKeySelectionError" xml:space="preserve">
+    <value>strings.HasActivationKeySelectionError</value>
+    <comment>Something went wrong... Skipping windows activation...</comment>
   </data>
   <data name="LangaugeSelectionError" xml:space="preserve">
     <value>strings.LanguageSelectionError</value>
@@ -148,6 +176,10 @@
   <data name="OsNotWindows10" xml:space="preserve">
     <value>strings.OsNotWindows10</value>
     <comment>This windows version is not supported! WinClean is only designed for Windows 10.</comment>
+  </data>
+  <data name="Part1TitleBar" xml:space="preserve">
+    <value>strings.Part1TitleBar</value>
+    <comment>===== Part 1 - Windows Activation =====</comment>
   </data>
   <data name="SelectionNotInRange" xml:space="preserve">
     <value>strings.SelectionNotInRange</value>
@@ -172,5 +204,9 @@
   <data name="WindowsAlreadyActivated" xml:space="preserve">
     <value>strings.WindowsAlreadyActivated</value>
     <comment>Windows is already activated! Skipping windows activation...</comment>
+  </data>
+  <data name="WindowsNotYetActivated" xml:space="preserve">
+    <value>strings.WindowsNotAlreadyActivated</value>
+    <comment>Windows doesn't seem to be activated yet! Let's change that...</comment>
   </data>
 </root>
