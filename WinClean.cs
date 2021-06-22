@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using static WinClean.ConsoleHelper;
+using System.Runtime.InteropServices;
 
 namespace WinClean {
     /// <summary>
@@ -22,6 +23,14 @@ namespace WinClean {
             ConsoleTitle("Setting font...");
             ConsoleFont("Consolas", 24);
             ConsoleLang("en-us");
+
+            // === Part 0 - Checking for Windows 10 ===
+            ConsoleTitle("Checking for Windows 10");
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+                //Print error message
+            } else {
+                
+            }
 
             // === Checking for WinClean registry keys ===
             ConsoleTitle("Registry Check");
@@ -55,9 +64,6 @@ namespace WinClean {
             ConsoleSleep(4000);
             
             ConsoleWrite("", "");
-
-            // === Part 0 - Checking for Windows 10 ===
-
 
             // === Part 1 - Activating Windows ===
 
