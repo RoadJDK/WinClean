@@ -13,6 +13,10 @@ namespace WinClean {
         private const int FixedWidthTrueType = 54;
         private const int StandardOutputHandle = -11;
 
+        /// <summary>
+        /// Use this struct inside a list together with the CreateQuestion function.
+        /// </summary>
+        /// <see cref="CreateQuestion(string, List{SelectionOption})"/></see>
         public struct SelectionOption {
             public int Number { get; }
             public string Text { get; }
@@ -21,18 +25,38 @@ namespace WinClean {
                 Text = _text;
             }
         }
+        /// <summary>
+        /// Writes the specified text from WinClean to the Console in white.
+        /// </summary>
+        /// <param name="text">The text that should be written.</param>
         public static void ConsoleWrite(string text) {
             ConsoleWrite("WinClean", text, ConsoleColor.White);
         }
 
+        /// <summary>
+        /// Writes the specified text from the specified name to the Console in white.
+        /// </summary>
+        /// <param name="name">The name that should be written from.</param>
+        /// <param name="text">The text that should be written.</param>
         public static void ConsoleWrite(string name, string text) {
             ConsoleWrite(name, text, ConsoleColor.White);
         }
 
+        /// <summary>
+        /// Writes the specified text from WinClean to the Console in the specified color.
+        /// </summary>
+        /// <param name="text">The text that should be written.</param>
+        /// <param name="color">The color in which the text should be.</param>
         public static void ConsoleWrite(string text, ConsoleColor color) {
             ConsoleWrite("WinClean", text, color);
         }
 
+        /// <summary>
+        /// Writes the specified text from the specified name to the Console in the specified color.
+        /// </summary>
+        /// <param name="name">The name that should be written from.</param>
+        /// <param name="text">The text that should be written.</param>
+        /// <param name="color">The color in which the text should be.</param>
         public static void ConsoleWrite(string name, string text, ConsoleColor color) {
             Console.ForegroundColor = color;
             if (name == "") {
@@ -44,62 +68,118 @@ namespace WinClean {
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        /// <summary>
+        /// Writes the specified text from Error to the Console in red.
+        /// </summary>
+        /// <param name="text">The text that should be written</param>
         public static void ConsoleWriteError(string text) {
             ConsoleWrite("ERROR", text, ConsoleColor.Red);
         }
 
+        /// <summary>
+        /// Writes the specified text from Warn to the Console in yellow.
+        /// </summary>
+        /// <param name="text"></param>
         public static void ConsoleWriteWarn(string text) {
             ConsoleWrite("WARN", text, ConsoleColor.Yellow);
         }
 
+        /// <summary>
+        /// Ends the program with exit code -1 and writes strings.FatalErrorDefault from Fatal to the Console in red.
+        /// </summary>
         public static void ConsoleFatal() {
             ConsoleFatal(-1);
         }
 
+        /// <summary>
+        /// Ends the program with the specified exit code and writes strings.FatalErrorDefault from Fatal to the Console in red.
+        /// </summary>
+        /// <param name="exitCode"></param>
         public static void ConsoleFatal(int exitCode) {
             ConsoleFatal(exitCode, Strings.FatalErrorDefault);
         }
 
+        /// <summary>
+        /// Ends the program with exit code -1 and writes the specified message from Fatal to the Console in red.
+        /// </summary>
+        /// <param name="message">Message to write</param>
         public static void ConsoleFatal(string message) {
             ConsoleFatal(-1, message);
         }
 
+        /// <summary>
+        /// Ends the program with the specified exit code and writes the specified message from Fatal to the Console in red.
+        /// </summary>
+        /// <param name="exitCode"></param>
+        /// <param name="message">Message to write</param>
         public static void ConsoleFatal(int exitCode, string message) {
             ConsoleWrite("FATAL", message, ConsoleColor.Red);
-            EnterToContinue();
+            EnterToContinue(Strings.EnterToExit);
             Environment.Exit(exitCode);
         }
 
+        /// <summary>
+        /// Ends the program with exit code 0.
+        /// </summary>
         public static void ConsoleExit() {
             Environment.Exit(0);
         }
 
+        /// <summary>
+        /// Ends the program with the specified exit code.
+        /// </summary>
+        /// <param name="exitCode"></param>
         public static void ConsoleExit(int exitCode) {
             Environment.Exit(exitCode);
         }
 
+        /// <summary>
+        /// Changes the title to the specified title.
+        /// Title Structure: "WinClean v0.1.0 - Example"
+        /// </summary>
+        /// <param name="title">The title to change to</param>
         public static void ConsoleTitle(string title) {
             Console.Title = "WinClean " + WinClean.Version + " - " + title;
         }
 
+        /// <summary>
+        /// Changes the language of the Console to the specified locale
+        /// </summary>
+        /// <param name="locale">The locale to change to.</param>
         public static void ConsoleLang(string locale) {
             CultureInfo culture = new CultureInfo(locale);
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
         }
 
+        /// <summary>
+        /// Sleeps for the specified time
+        /// </summary>
+        /// <param name="ms">Time to sleep in milliseconds</param>
         public static void ConsoleSleep(int ms) {
             Thread.Sleep(ms);
         }
 
+        /// <summary>
+        /// Reads the next line from the Console
+        /// </summary>
+        /// <returns>The next line from the Console</returns>
         public static string ConsoleRead() {
             return Console.ReadLine();
         }
 
+        /// <summary>
+        /// Reads the next line from the Console and adds the specified text before.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public static string ConsoleRead(string text) {
             Console.Write(" " + text + ": "); return ConsoleRead();
         }
 
+        /// <summary>
+        /// Writes strings.EnterToContinue to the Console and waits for user to press enter.
+        /// </summary>
         public static void EnterToContinue() {
             ConsoleWrite(Strings.EnterToContinue);
             ConsoleKey key = Console.ReadKey().Key;
@@ -108,6 +188,10 @@ namespace WinClean {
             }
         }
 
+        /// <summary>
+        /// Writes the specified text to the Console and waits for user to press enter.
+        /// </summary>
+        /// <param name="text">The text to write.</param>
         public static void EnterToContinue(string text) {
             ConsoleWrite(text);
             ConsoleKey key = Console.ReadKey().Key;
@@ -116,6 +200,11 @@ namespace WinClean {
             }
         }
 
+        /// <summary>
+        /// Writes the specified question to the Console and awaits input from user.
+        /// </summary>
+        /// <param name="question">The question to ask the user.</param>
+        /// <returns>The inputted string from the user.</returns>
         public static string CreateQuestion(string question) {
             ConsoleWrite("", "");
             ConsoleWrite(question);
@@ -126,6 +215,13 @@ namespace WinClean {
             return result;
         }
 
+        /// <summary>
+        /// Writes the specified question and all specified SelectionOptions. Asks the user to select one of the options.
+        /// </summary>
+        /// <param name="question">The question to ask the user.</param>
+        /// <param name="options">The possible options for the user to select from.</param>
+        /// <returns>The number of the selected SelectionOption</returns>
+        /// <see cref="SelectionOption"></see>
         public static int CreateQuestion(string question, List<SelectionOption> options) {
             ConsoleWrite("", "");
             ConsoleWrite(question);
@@ -156,6 +252,9 @@ namespace WinClean {
             return result;
         }
 
+        /// <summary>
+        /// Clears the Console.
+        /// </summary>
         public static void ConsoleClear() {
             Console.Clear();
         }
@@ -188,6 +287,12 @@ namespace WinClean {
             public string FontName;
         }
 
+        /// <summary>
+        /// Changes the font of the Console to the specified font and optionally sets the font size.
+        /// </summary>
+        /// <param name="font">System font to change to</param>
+        /// <param name="fontSize">Size of the font</param>
+        /// <returns></returns>
         public static FontInfo[] ConsoleFont(string font, short fontSize = 0) {
             FontInfo before = new FontInfo {
                 cbSize = Marshal.SizeOf<FontInfo>()
