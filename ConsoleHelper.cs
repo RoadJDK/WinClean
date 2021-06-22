@@ -83,7 +83,9 @@ namespace WinClean {
         }
 
         public static void ConsoleLang(string locale) {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(locale);
+            CultureInfo culture = new CultureInfo(locale);
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
         }
 
         public static void ConsoleSleep(int ms) {
