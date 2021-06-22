@@ -117,12 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  
+  <data name="EnterToContinue" xml:space="preserve">
+    <value>Press Enter to continue...</value>
+  </data>
   <data name="FatalErrorDefault" xml:space="preserve">
     <value>A fatal error occurred!</value>
   </data>
-  
-  
-  
-  
+  <data name="LangaugeSelectionError" xml:space="preserve">
+    <value>Something went wrong... English is set as language.</value>
+  </data>
+  <data name="SelectionNotInRange" xml:space="preserve">
+    <value>Selection is not in range!</value>
+  </data>
+  <data name="SelectionNotNumber" xml:space="preserve">
+    <value>Selection is not a number!</value>
+  </data>
+  <data name="SelectionSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
 </root>
