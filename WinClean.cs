@@ -16,7 +16,7 @@ namespace WinClean {
     /// </summary>
     public class WinClean {
 
-        public static string Version = "v0.1.0-iss11-t1";
+        public static string Version = "v0.1.0-iss11-t2";
 
         public static void Main(string[] args) {
             ConsoleClear();
