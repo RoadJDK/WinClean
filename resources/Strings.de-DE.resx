@@ -120,11 +120,20 @@
   <data name="EnterToContinue" xml:space="preserve">
     <value>Drücken Sie die Eingabetaste, um fortzufahren.</value>
   </data>
+  <data name="EnterToExit" xml:space="preserve">
+    <value>Drücken Sie zum Beenden die Eingabetaste...</value>
+  </data>
   <data name="FatalErrorDefault" xml:space="preserve">
     <value>Ein fataler Fehler ist aufgetreten!</value>
   </data>
   <data name="LangaugeSelectionError" xml:space="preserve">
     <value>Etwas ist schief gelaufen... Englisch wird als Sprache eingestellt.</value>
+  </data>
+  <data name="OsNotWindows" xml:space="preserve">
+    <value>WinClean kann nur unter Windows verwendet werden!</value>
+  </data>
+  <data name="OsNotWindows10" xml:space="preserve">
+    <value>Diese Windows-Version wird nicht unterstützt! WinClean ist nur für Windows 10 konzipiert.</value>
   </data>
   <data name="SelectionNotInRange" xml:space="preserve">
     <value>Auswahl ist nicht im Bereich!</value>
@@ -134,6 +143,9 @@
   </data>
   <data name="SelectionSelect" xml:space="preserve">
     <value>Auswählen</value>
+  </data>
+  <data name="TitleWelcome" xml:space="preserve">
+    <value>Wilkommen</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Willkommen bei WinClean! WinClean wird Ihre neue Windows-Installation bereinigen und einrichten.</value>
