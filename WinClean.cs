@@ -150,9 +150,9 @@ namespace WinClean {
                                 "0xC004F051", // Product key is blocked.
                             }, false, true);
 
-                            ConsoleWrite("Test1");
+                            ConsoleWrite("ActivationStatus: " + activationComplete);
 
-                            switch (activationComplete.ToUpper()) {
+                            switch (activationComplete) {
                                 case null:
                                     ConsoleWrite("Test2");
                                     ConsoleWrite("Activation Key has been succesfully installed!");
