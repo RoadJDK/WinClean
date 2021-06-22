@@ -81,7 +81,13 @@ namespace WinClean {
             ConsoleWrite("", "");
 
             // === Part 1 - Activating Windows ===
+            ConsoleWrite(Strings.CheckingWindowsActivation);
+            if (!IsWindowsActivated()) {
 
+            } else {
+                ConsoleWrite(Strings.WindowsAlreadyActivated);
+                ConsoleSleep(1000);
+            }
 
             // === Part 2 - Updating Windows ===
 
@@ -108,6 +114,7 @@ namespace WinClean {
 
 
             // === Part 10 - Finishing WinClean ===
+            EnterToContinue(Strings.EnterToExit);
         }
     }
 }

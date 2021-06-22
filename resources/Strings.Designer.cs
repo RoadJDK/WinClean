@@ -61,6 +61,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.CheckingWindowsActivation ähnelt.
+        /// </summary>
+        public static string CheckingWindowsActivation {
+            get {
+                return ResourceManager.GetString("CheckingWindowsActivation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterToContinue ähnelt.
         /// </summary>
         public static string EnterToContinue {
@@ -165,6 +174,15 @@ namespace WinClean.resources {
         public static string WelcomeMessage {
             get {
                 return ResourceManager.GetString("WelcomeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.WindowsAlreadyActivated ähnelt.
+        /// </summary>
+        public static string WindowsAlreadyActivated {
+            get {
+                return ResourceManager.GetString("WindowsAlreadyActivated", resourceCulture);
             }
         }
     }

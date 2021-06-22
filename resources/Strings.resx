@@ -117,40 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CheckingWindowsActivation" xml:space="preserve">
+    <value>strings.CheckingWindowsActivation</value>
+    <comment>Checking your windows activation status...</comment>
+  </data>
   <data name="EnterToContinue" xml:space="preserve">
     <value>strings.EnterToContinue</value>
+    <comment>Press Enter to continue...</comment>
   </data>
   <data name="EnterToExit" xml:space="preserve">
     <value>strings.EnterToExit</value>
+    <comment>Press enter to exit...</comment>
   </data>
   <data name="FatalErrorDefault" xml:space="preserve">
     <value>strings.FatalErrorDefault</value>
+    <comment>A fatal error occurred!</comment>
   </data>
   <data name="LangaugeSelectionError" xml:space="preserve">
     <value>strings.LanguageSelectionError</value>
+    <comment>Something went wrong... English is set as language.</comment>
   </data>
   <data name="LanguageAlreadySet" xml:space="preserve">
     <value>string.LanguageAlreadySet</value>
+    <comment>Language has already been set to English.</comment>
   </data>
   <data name="OsNotWindows" xml:space="preserve">
     <value>strings.OsNotWindows</value>
+    <comment>WinClean can only be used on Windows!</comment>
   </data>
   <data name="OsNotWindows10" xml:space="preserve">
     <value>strings.OsNotWindows10</value>
+    <comment>This windows version is not supported! WinClean is only designed for Windows 10.</comment>
   </data>
   <data name="SelectionNotInRange" xml:space="preserve">
     <value>strings.SelectionNotInRange</value>
+    <comment>Selection is not in range!</comment>
   </data>
   <data name="SelectionNotNumber" xml:space="preserve">
     <value>strings.SelectionNotNumber</value>
+    <comment>Selection is not a number!</comment>
   </data>
   <data name="SelectionSelect" xml:space="preserve">
     <value>strings.SelectionSelect</value>
+    <comment>Select</comment>
   </data>
   <data name="TitleWelcome" xml:space="preserve">
     <value>strings.TitleWelcome</value>
+    <comment>Welcome</comment>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>strings.WelcomeMessage</value>
+    <comment>Welcome to WinClean! WinClean is going to clean and set up your new Windows installation.</comment>
+  </data>
+  <data name="WindowsAlreadyActivated" xml:space="preserve">
+    <value>strings.WindowsAlreadyActivated</value>
+    <comment>Windows is already activated! Skipping windows activation...</comment>
   </data>
 </root>
