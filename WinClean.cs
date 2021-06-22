@@ -24,30 +24,9 @@ namespace WinClean {
             // === Setting font ===
             ConsoleTitle("Setting font...");
             ConsoleFont("Consolas", 24);
+
+            // === Setting default language ===
             ConsoleLang("en-us");
-
-            // === Setting language ===
-            ConsoleTitle("Language");
-            var lang = CreateQuestion("Language / Sprache:", new List<SelectionOption>() {
-                new SelectionOption(1, "English"),
-                new SelectionOption(2, "Deutsch")
-            });
-
-            switch (lang) {
-                case 1:
-                    ConsoleLang("en-us");
-                    break;
-
-                case 2:
-                    ConsoleLang("de-de");
-                    break;
-
-                default:
-                    ConsoleWriteError(Strings.LangaugeSelectionError);
-                    break;
-            }
-
-            ConsoleClear();
 
             // === Part 0 - Checking for Windows 10 ===
             ConsoleTitle("Checking for Windows 10");
@@ -63,10 +42,36 @@ namespace WinClean {
                 }
             }
 
-            // === Read language into registry ===
+            // === Setting language ===
+            if (!RegistryValueExists("lang")) {
+                ConsoleTitle("Language");
+                var lang = CreateQuestion("Language / Sprache:", new List<SelectionOption>() {
+                    new SelectionOption(1, "English"),
+                    new SelectionOption(2, "Deutsch")
+                });
 
-            // === Checking for WinClean registry keys ===
-            ConsoleTitle("Registry Check");
+                switch (lang) {
+                    case 1:
+                        ConsoleLang("en-us");
+                        RegistryAddValue("lang", "en-us");
+                        break;
+
+                    case 2:
+                        ConsoleLang("de-de");
+                        RegistryAddValue("lang", "de-de");
+                        break;
+
+                    default:
+                        ConsoleWriteError(Strings.LangaugeSelectionError);
+                        break;
+                }
+            } else {
+                ConsoleLang(RegistryReadValue("lang"));
+                ConsoleWrite(Strings.LanguageAlreadySet);
+                ConsoleSleep(3000);
+            }
+
+            ConsoleClear();
 
             // === Welcome to WinClean ===
             ConsoleTitle(Strings.TitleWelcome);

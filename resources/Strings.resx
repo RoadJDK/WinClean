@@ -129,6 +129,9 @@
   <data name="LangaugeSelectionError" xml:space="preserve">
     <value>strings.LanguageSelectionError</value>
   </data>
+  <data name="LanguageAlreadySet" xml:space="preserve">
+    <value>string.LanguageAlreadySet</value>
+  </data>
   <data name="OsNotWindows" xml:space="preserve">
     <value>strings.OsNotWindows</value>
   </data>

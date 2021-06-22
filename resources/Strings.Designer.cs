@@ -97,6 +97,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die string.LanguageAlreadySet ähnelt.
+        /// </summary>
+        public static string LanguageAlreadySet {
+            get {
+                return ResourceManager.GetString("LanguageAlreadySet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.OsNotWindows ähnelt.
         /// </summary>
         public static string OsNotWindows {
