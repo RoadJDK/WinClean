@@ -2,8 +2,10 @@
 
 using System;
 using System.Collections.Generic;
-using static WinClean.ConsoleHelper;
 using System.Runtime.InteropServices;
+
+using static WinClean.ConsoleHelper;
+using static WinClean.WinHelper;
 
 namespace WinClean {
     /// <summary>
@@ -27,9 +29,15 @@ namespace WinClean {
             // === Part 0 - Checking for Windows 10 ===
             ConsoleTitle("Checking for Windows 10");
             if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
-                //Print error message
+                ConsoleWriteError(Strings.OsNotWindows);
+                EnterToContinue(Strings.EnterToExit);
+                ConsoleExit(-1);
             } else {
-                
+                if (!IsWindows10()) {
+                    ConsoleWriteError(Strings.OsNotWindows10);
+                    EnterToContinue(Strings.EnterToExit);
+                    ConsoleExit(-1);
+                }
             }
 
             // === Checking for WinClean registry keys ===
