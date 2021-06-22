@@ -142,7 +142,7 @@ namespace WinClean {
                             new List<string>() {
                                 "0x8004FE21", // This computer is not running genuine Windows.
                                 "0x80070005", // Access denied. The requested action requires elevated privileges.
-                                "0x8007007b", // The product key you entered didn't work. Try again.
+                                "0x8007007B", // The product key you entered didn't work. Try again.
                                 "0xC004B100", // Computer could not be activated.
                                 "0xC004C001", // Product key is invalid.
                                 "0xC004C003", // Product key is blocked.
@@ -221,8 +221,7 @@ namespace WinClean {
                                     EnterToContinue();
                                     return;
                             }
-                        } finally {
-                            ConsoleWrite("Test12");
+                        } catch {
                             ConsoleWriteError(Strings.SomethingWentWrong);
                             EnterToContinue(Strings.EnterToExit);
                             ConsoleExit(-1);

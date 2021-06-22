@@ -228,7 +228,7 @@ namespace WinClean {
                 ConsoleWrite("CMD", cmdOut);
             }
             foreach (string check in checks) {
-                if (cmdOut.Contains(check, StringComparison.OrdinalIgnoreCase)) {
+                if (cmdOut.Contains(check)) {
                     return check;
                 }
             }
