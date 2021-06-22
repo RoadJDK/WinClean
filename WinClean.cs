@@ -108,7 +108,6 @@ namespace WinClean {
 
 
             // === Part 10 - Finishing WinClean ===
-            EnterToContinue(Strings.EnterToExit);
         }
 
         private static void Part1() {
@@ -132,15 +131,24 @@ namespace WinClean {
                             ConsoleWriteError(Strings.EnterActivationKeyError);
                             activationKey = ConsoleRead(Strings.ActivationKey);
                         }
-                        var activationSetExitCode = ConsoleRun(@"cscript C:\Windows\System32\slmgr.vbs //T:60 /ipk " + activationKey.Trim(), false, true);
-                        if (activationSetExitCode == 0) {
-                            ConsoleWrite("Activation Key has been set succesfully!");
-                        } else {
-                            ConsoleWrite("Error while setting activation key!");
+                        try {
+                            string activationComplete = ConsoleRunWithChecks(@"cscript C:\Windows\System32\slmgr.vbs //B //Nologo //T:60 /ipk " + activationKey.Trim(), new List<string>() { "" }, true);
+                            switch (activationComplete) {
+                                case null:
+                                    ConsoleWrite("Activation Key \"" + activationKey + "\" has succesfully installed!");
+                                    break;
+
+                                default:
+                                    ConsoleWrite("Activation Key \"" + activationKey + "\" has not been installed!");
+                                    break;
+                            }
+                        } finally {
+                            EnterToContinue(Strings.EnterToExit);
                         }
                         break;
 
                     case 2:
+                        EnterToContinue(Strings.EnterToExit);
                         break;
 
                     default:

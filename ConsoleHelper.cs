@@ -184,6 +184,54 @@ namespace WinClean {
             return cmd.ExitCode;
         }
 
+        public static bool ConsoleRunWithChecks(string command, string check, bool admin) {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = false;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            if (admin) {
+                cmd.StartInfo.Verb = "runas";
+            }
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(command);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            if (cmd.StandardOutput.ReadToEnd().Contains(check)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public static string ConsoleRunWithChecks(string command, List<string> checks, bool admin) {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = false;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            if (admin) {
+                cmd.StartInfo.Verb = "runas";
+            }
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(command);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            string cmdOut = cmd.StandardOutput.ReadToEnd();
+            foreach (string check in checks) {
+                if (cmdOut.Contains(check)) {
+                    return check;
+                }
+            }
+            return null;
+        }
+
         /// <summary>
         /// Reads the next line from the Console
         /// </summary>
